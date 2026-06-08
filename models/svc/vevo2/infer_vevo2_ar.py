@@ -143,7 +143,9 @@ if __name__ == "__main__":
 
     ### Zero-shot Text-to-Speech and Text-to-Singing  ###
     tgt_text = "I don't really care what you call me. I've been a silent spectator, watching species evolve, empires rise and fall. But always remember, I am mighty and enduring. Respect me and I'll nurture you; ignore me and you shall face the consequences."
-    ref_wav_path = "./models/vc/vevo/wav/arabic_male.wav"
+    #ref_wav_path = "./models/vc/vevo/wav/arabic_male.wav"
+    #这里控制音色
+    ref_wav_path = "/root/autodl-tmp/cuhk/en_sample_0_18s_24k.wav"
     ref_text = "Flip stood undecided, his ears strained to catch the slightest sound."
 
     jaychou_path = "./models/svc/vevosing/wav/jaychou.wav"
@@ -157,11 +159,31 @@ if __name__ == "__main__":
 
     # the style reference and timbre reference are same
     vevo2_tts(
-        tgt_text=tgt_text,
-        ref_wav_path=ref_wav_path,
+        #tgt_text=tgt_text,
+        #ref_wav_path=ref_wav_path,
         timbre_ref_wav_path=ref_wav_path,
         output_path=os.path.join(output_dir, "zstts.wav"),
-        ref_text=ref_text,
+        #ref_text=ref_text,
+        tgt_text = "我们来看第一小题。这里的曲线是 y 等于一除以 x，题目要求我们求它在 x 等于 a 这一点的斜率，其中 a 不能等于零。按照导数的定义，我们要先比较 f 的 a 加 h 和 f 的 a，再除以 h，然后让 h 趋近于零。化简之后，分子会变成负 h，分母是 h 乘以 a，再乘以 a 加 h。这里的 h 可以约掉，所以最后的极限就是负的一除以 a 的平方。因此，在 x 等于 a 的地方，斜率是负的一除以 a 平方。特别地，当 x 等于负一时，斜率就是负一。",
+        #tgt_text = "Let us look at part a. The curve is y equals one over x, and we want to find its slope at a general point x equals a, where a is not zero. Using the definition of the derivative, we compare f of a plus h with f of a, divide by h, and then let h approach zero. After simplifying, the difference becomes negative h over h times a times a plus h. The h cancels, and the limit is negative one over a squared. So the slope at x equals a is negative one over a squared. In particular, when x equals negative one, the slope is negative one.",
+        
+        
+        #ref_wav_path = "/root/autodl-tmp/cuhk/puremath_24k.wav",
+
+        #ref_text = "而纯数学基本是猜想来决定的，就是数学里面很多猜想。做纯数学的，包括我和我的同学，做纯数学的，他们都是解决猜想。啊这个，这是两种不同的这个这个这个这个 motivation。",
+        
+
+        #WCM
+        #ref_wav_path = "/root/autodl-tmp/cuhk/en_sample_0_18s_24k.wav",
+
+        #ref_text = "Good afternoon, everyone. It is my pleasure to give this talk at MWC 2025. This talk is about a line of work that I have studied with my colleagues at the Shenzhen Research Institute of Big Data and The Chinese University of Hong Kong, Shenzhen.",
+    
+        ref_wav_path = "/root/autodl-tmp/cuhk/puremath_24k.wav",
+
+        ref_text = "而纯数学基本是猜想来决定的，就是数学里面很多猜想。做纯数学的，包括我和我的同学，做纯数学的，他们都是解决猜想。啊这个，这是两种不同的这个这个这个这个 motivation。",
+    
+    
+    
     )
 
     # the style reference and timbre reference are different

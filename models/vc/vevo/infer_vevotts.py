@@ -94,18 +94,22 @@ if __name__ == "__main__":
         device=device,
     )
 
-    src_text = "I don't really care what you call me. I've been a silent spectator, watching species evolve, empires rise and fall. But always remember, I am mighty and enduring. Respect me and I'll nurture you; ignore me and you shall face the consequences."
+    #src_text = "I don't really care what you call me. I've been a silent spectator, watching species evolve, empires rise and fall. But always remember, I am mighty and enduring. Respect me and I'll nurture you; ignore me and you shall face the consequences."
 
-    ref_wav_path = "./models/vc/vevo/wav/arabic_male.wav"
-    ref_text = "Flip stood undecided, his ears strained to catch the slightest sound."
+    #ref_wav_path = "./models/vc/vevo/wav/arabic_male.wav"
+    #ref_text = "Flip stood undecided, his ears strained to catch the slightest sound."
+    src_text = """今天我们讲解了向量和线性代数。这两个模块是大学数学的基础，也是后续学习更复杂数学概念的基石。"""
 
+    ref_wav_path = "/root/autodl-tmp/cuhk/luo_ref_1h02m11_1h02m21_24k.wav"
+
+    ref_text = """So a Plus b two vectors is Equal to b Plus a.ok？and the associativity A Plus, b Plus c is equal to a."""
     # 1. Zero-Shot TTS (the style reference and timbre reference are same)
     vevo_tts(
         src_text,
         ref_wav_path,
         output_path="./models/vc/vevo/wav/output_vevotts1.wav",
         ref_text=ref_text,
-        src_language="en",
+        src_language="zh",
         ref_language="en",
     )
 
